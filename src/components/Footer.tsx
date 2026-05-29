@@ -24,13 +24,13 @@ const Footer = () => {
         <div className="py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <div className="text-2xl">🚗</div>
-              <div>
-                <h3 className="text-xl font-bold text-divine">KL Travels</h3>
-                <p className="text-sm text-muted-foreground">Your Trusted Journey Begins Here</p>
-              </div>
-            </div>
+            <a href="/" className="inline-block py-1">
+              <img 
+                src="/logo.png" 
+                alt="KL Travels" 
+                className="h-16 w-auto object-contain transition-transform duration-300 hover:scale-105" 
+              />
+            </a>
             <p className="text-muted-foreground">
               Safe, spiritual, and trusted cab services from Hyderabad.
               Your journey, our devotion since 2015.
