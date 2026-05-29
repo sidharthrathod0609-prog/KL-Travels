@@ -3,8 +3,10 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { parseReviewDate } from "@/lib/security";
+import { useNavigate } from "react-router-dom";
 
 const ReviewsTeaser = () => {
+  const navigate = useNavigate();
   const reviews = [
     {
       id: 1,
@@ -155,11 +157,11 @@ const ReviewsTeaser = () => {
               Help other families choose confidently by sharing your experience with KL Travels
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="btn-divine" onClick={() => window.location.href = "/reviews"}>
+              <Button className="btn-divine" onClick={() => navigate("/reviews")}>
                 Read All Reviews
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
-              <Button variant="outline" onClick={() => window.location.href = "/reviews#write-review"}>
+              <Button variant="outline" onClick={() => navigate("/reviews#write-review")}>
                 Write a Review
               </Button>
             </div>

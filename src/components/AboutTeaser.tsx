@@ -1,7 +1,9 @@
 import { ArrowRight, User, Calendar, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 const AboutTeaser = () => {
+  const navigate = useNavigate();
   return (
     <section className="py-20 bg-gradient-to-r from-background via-secondary/10 to-background">
       <div className="container mx-auto px-4 lg:px-8">
@@ -33,7 +35,7 @@ const AboutTeaser = () => {
               </div>
             </div>
 
-            <Button size="lg" className="btn-divine" onClick={() => window.location.href = "/about"}>
+            <Button size="lg" className="btn-divine" onClick={() => navigate("/about")}>
               Read More About Us
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>

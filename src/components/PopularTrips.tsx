@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 import srisailamImage from "@/assets/srisailam.jpg";
 import tirupatiImage from "@/assets/tirupati.jpg";
 import pondicherryImage from "@/assets/pondicherry.jpg";
@@ -7,6 +8,7 @@ import goaImage from "@/assets/goa.jpg";
 import hyderabadImage from "@/assets/hyderabad.jpg";
 
 const PopularTrips = () => {
+  const navigate = useNavigate();
   const trips = [
     {
       id: "srisailam",
@@ -70,7 +72,7 @@ const PopularTrips = () => {
               key={trip.id}
               className="card-spiritual group cursor-pointer"
               style={{ animationDelay: `${index * 0.1}s` }}
-              onClick={() => window.location.href = `/destinations/${trip.id}`}
+              onClick={() => navigate(`/destinations/${trip.id}`)}
             >
               {/* Image */}
               <div className="relative overflow-hidden rounded-lg mb-6">
@@ -107,7 +109,7 @@ const PopularTrips = () => {
 
         {/* View All Destinations */}
         <div className="text-center mt-12">
-          <Button size="lg" className="btn-divine" onClick={() => window.location.href = "/destinations"}>
+          <Button size="lg" className="btn-divine" onClick={() => navigate("/destinations")}>
             View All Destinations
             <ArrowRight className="w-5 h-5 ml-2" />
           </Button>
