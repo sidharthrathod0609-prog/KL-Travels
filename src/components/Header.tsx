@@ -28,7 +28,16 @@ const Header = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <NavLink to="/" className="flex items-center py-1">
+          <NavLink
+            to="/"
+            className="flex items-center py-1"
+            onClick={(e) => {
+              if (window.location.pathname === "/") {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }
+            }}
+          >
             <img
               src="/logo.png"
               alt="KL Travels"
