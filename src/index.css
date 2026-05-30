@@ -200,3 +200,56 @@
     transform: translateX(0);
   }
 }
+
+/* Responsive mobile adjustments specifically for screens below 573px */
+@media (max-w: 573px) {
+  .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* Global section padding adjustments */
+  .py-20 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+
+  /* Global typography adjustments */
+  h1, .text-5xl, .text-6xl, .text-7xl {
+    font-size: 2rem !important; /* 32px */
+    line-height: 2.5rem !important;
+  }
+
+  h2, .text-4xl {
+    font-size: 1.5rem !important; /* 24px */
+    line-height: 2rem !important;
+  }
+
+  h3, .text-3xl {
+    font-size: 1.25rem !important; /* 20px */
+    line-height: 1.75rem !important;
+  }
+
+  .text-xl {
+    font-size: 1rem !important; /* 16px */
+    line-height: 1.5rem !important;
+  }
+
+  /* Custom component refinements */
+  .card-spiritual {
+    padding: 1rem !important; /* tighter card padding */
+  }
+
+  /* Calendar Popover responsiveness */
+  .rdp [class*="h-9"], .rdp [class*="w-9"] {
+    width: 2rem !important; /* 32px */
+    height: 2rem !important; /* 32px */
+  }
+
+  /* CTA actions and buttons */
+  .btn-divine, .btn-outline-divine {
+    padding: 0.75rem 1rem !important;
+    font-size: 0.95rem !important;
+    width: 100% !important; /* stack buttons on mobile */
+  }
+}

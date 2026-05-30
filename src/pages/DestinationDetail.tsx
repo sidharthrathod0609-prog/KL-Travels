@@ -480,13 +480,13 @@ const DestinationDetail = () => {
                     {destination.duration}
                   </div>
                 </div>
-                <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+                <h1 className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
                   {destination.name}
                 </h1>
                 <p className="text-xl text-white/90 mb-8">
                   {destination.overview}
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex flex-col sm:flex-row gap-4 w-full max-w-sm mx-auto sm:max-w-none">
                   <Button onClick={() => handleWhatsApp()} size="lg" className="bg-white text-primary hover:bg-white/90">
                     <MessageCircle className="w-5 h-5 mr-2" />
                     Get Quote on WhatsApp
@@ -501,7 +501,7 @@ const DestinationDetail = () => {
                 <img
                   src={destination.image}
                   alt={destination.name}
-                  className="w-full h-96 object-cover rounded-lg shadow-2xl"
+                  className="w-full h-64 sm:h-96 object-cover rounded-lg shadow-2xl"
                 />
               </div>
             </div>

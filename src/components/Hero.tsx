@@ -36,7 +36,7 @@ const Hero = () => {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 w-full max-w-sm mx-auto sm:max-w-none">
             <Button 
               onClick={handleWhatsApp}
               size="lg" 
@@ -57,18 +57,18 @@ const Hero = () => {
           </div>
 
           {/* Trust Indicators */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-2xl mx-auto">
+          <div className="grid grid-cols-3 gap-2 sm:gap-8 max-w-2xl mx-auto border-t border-border/20 pt-6 sm:pt-0 sm:border-none">
             <div className="text-center animate-float" style={{ animationDelay: '0s' }}>
-              <div className="text-3xl font-bold text-primary mb-2">9+ Years</div>
-              <div className="text-muted-foreground">Trusted Service</div>
+              <div className="text-lg xs:text-xl sm:text-3xl font-bold text-primary mb-1 sm:mb-2">9+ Years</div>
+              <div className="text-[10px] xs:text-xs sm:text-base text-muted-foreground">Trusted Service</div>
             </div>
             <div className="text-center animate-float" style={{ animationDelay: '2s' }}>
-              <div className="text-3xl font-bold text-primary mb-2">24/7</div>
-              <div className="text-muted-foreground">Available</div>
+              <div className="text-lg xs:text-xl sm:text-3xl font-bold text-primary mb-1 sm:mb-2">24/7</div>
+              <div className="text-[10px] xs:text-xs sm:text-base text-muted-foreground">Available</div>
             </div>
             <div className="text-center animate-float" style={{ animationDelay: '4s' }}>
-              <div className="text-3xl font-bold text-primary mb-2">100+</div>
-              <div className="text-muted-foreground">Happy Families</div>
+              <div className="text-lg xs:text-xl sm:text-3xl font-bold text-primary mb-1 sm:mb-2">100+</div>
+              <div className="text-[10px] xs:text-xs sm:text-base text-muted-foreground">Happy Families</div>
             </div>
           </div>
         </div>

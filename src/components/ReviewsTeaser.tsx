@@ -156,7 +156,7 @@ const ReviewsTeaser = () => {
             <p className="text-muted-foreground mb-6">
               Help other families choose confidently by sharing your experience with KL Travels
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center w-full max-w-xs mx-auto sm:max-w-none">
               <Button className="btn-divine" onClick={() => navigate("/reviews")}>
                 Read All Reviews
                 <ArrowRight className="w-4 h-4 ml-2" />

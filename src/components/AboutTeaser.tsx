@@ -42,7 +42,7 @@ const AboutTeaser = () => {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 animate-slide-in-right">
+          <div className="grid grid-cols-2 gap-4 sm:gap-6 animate-slide-in-right">
             <div className="card-spiritual text-center">
               <Calendar className="w-8 h-8 text-primary mx-auto mb-4" />
               <div className="text-3xl font-bold text-primary mb-2">2015</div>
@@ -53,7 +53,7 @@ const AboutTeaser = () => {
               <div className="text-3xl font-bold text-primary mb-2">100+</div>
               <div className="text-muted-foreground">Happy Families</div>
             </div>
-            <div className="card-spiritual text-center sm:col-span-2">
+            <div className="card-spiritual text-center col-span-2">
               <MapPin className="w-8 h-8 text-primary mx-auto mb-4" />
               <div className="text-xl font-bold text-primary mb-2">LB Nagar, Hyderabad</div>
               <div className="text-muted-foreground">Base Location</div>
