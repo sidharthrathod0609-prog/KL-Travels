@@ -127,46 +127,45 @@ const Destinations = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-8">
               {destinations.map((destination) => (
-                <Card key={destination.id} className="card-spiritual group hover-lift">
-                  <div className="aspect-video overflow-hidden rounded-t-lg">
+                <Card key={destination.id} className="card-spiritual group hover-lift flex flex-col justify-between p-0">
+                  <div className="h-20 xs:h-24 sm:h-auto aspect-video overflow-hidden rounded-t-lg">
                     <img
                       src={destination.image}
                       alt={destination.name}
                       className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                     />
                   </div>
-                  <CardHeader>
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="badge-divine">{destination.type}</span>
-                      <div className="flex items-center text-sm text-muted-foreground">
-                        <Clock className="w-4 h-4 mr-1" />
+                  <CardHeader className="p-2 sm:p-6 pb-1 sm:pb-6">
+                    <div className="flex items-center justify-between mb-1 sm:mb-2 min-w-0 gap-1">
+                      <span className="badge-divine text-[8px] sm:text-xs px-1 sm:px-2 py-0.5 truncate">{destination.type}</span>
+                      <div className="flex items-center text-[8px] xs:text-[10px] sm:text-sm text-muted-foreground flex-shrink-0">
+                        <Clock className="w-2.5 h-2.5 sm:w-4 sm:h-4 mr-0.5 sm:mr-1" />
                         {destination.duration}
                       </div>
                     </div>
-                    <CardTitle className="text-divine">{destination.name}</CardTitle>
-                    <CardDescription>{destination.description}</CardDescription>
+                    <CardTitle className="text-xs xs:text-sm sm:text-xl font-bold text-divine line-clamp-1">{destination.name}</CardTitle>
+                    <CardDescription className="text-[10px] xs:text-xs sm:text-sm text-muted-foreground line-clamp-2 min-h-[2.5rem] sm:min-h-0">{destination.description}</CardDescription>
                   </CardHeader>
-                  <CardContent>
-                    <div className="flex flex-col space-y-3">
-                      <div className="flex gap-2 w-full">
+                  <CardContent className="p-2 sm:p-6 pt-0 sm:pt-0">
+                    <div className="flex flex-col space-y-2 sm:space-y-3">
+                      <div className="flex flex-col xs:flex-row gap-1.5 w-full">
                         <Button
                           variant="outline"
                           onClick={() => navigate(`/destinations/${destination.id}`)}
-                          className="flex-1 btn-outline-divine text-xs sm:text-sm px-2"
+                          className="flex-1 btn-outline-divine text-[9px] xs:text-[10px] sm:text-sm h-7 xs:h-8 px-1 sm:px-2"
                         >
                           View Details
                         </Button>
                         <Button
                           onClick={() => handleWhatsApp(destination.name)}
-                          className="btn-divine flex-1 text-xs sm:text-sm px-2"
+                          className="btn-divine flex-1 text-[9px] xs:text-[10px] sm:text-sm h-7 xs:h-8 px-1 sm:px-2"
                         >
                           Get Quote
-                          <ArrowRight className="w-4 h-4 ml-1.5 hidden sm:inline" />
                         </Button>
                       </div>
-                      <div className="flex items-center text-sm text-muted-foreground">
+                      <div className="hidden sm:flex items-center text-sm text-muted-foreground">
                         <MapPin className="w-4 h-4 mr-2" />
                         Pickup from anywhere in Hyderabad
                       </div>

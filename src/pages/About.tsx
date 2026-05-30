@@ -97,26 +97,26 @@ const About = () => {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 animate-slide-in-right">
-                <Card className="card-spiritual text-center">
-                  <CardContent className="pt-6">
-                    <Calendar className="w-8 h-8 text-primary mx-auto mb-4" />
-                    <div className="text-3xl font-bold text-primary mb-2">2015</div>
-                    <div className="text-muted-foreground">Established</div>
+              <div className="grid grid-cols-2 gap-3 sm:gap-6 animate-slide-in-right">
+                <Card className="card-spiritual text-center p-0 flex flex-col justify-between">
+                  <CardContent className="p-3 sm:p-6">
+                    <Calendar className="w-5 h-5 sm:w-8 sm:h-8 text-primary mx-auto mb-1.5 sm:mb-4" />
+                    <div className="text-lg xs:text-xl sm:text-3xl font-bold text-primary mb-0.5 sm:mb-2">2015</div>
+                    <div className="text-[10px] xs:text-xs sm:text-base text-muted-foreground">Established</div>
                   </CardContent>
                 </Card>
-                <Card className="card-spiritual text-center">
-                  <CardContent className="pt-6">
-                    <Users className="w-8 h-8 text-primary mx-auto mb-4" />
-                    <div className="text-3xl font-bold text-primary mb-2">500+</div>
-                    <div className="text-muted-foreground">Happy Families</div>
+                <Card className="card-spiritual text-center p-0 flex flex-col justify-between">
+                  <CardContent className="p-3 sm:p-6">
+                    <Users className="w-5 h-5 sm:w-8 sm:h-8 text-primary mx-auto mb-1.5 sm:mb-4" />
+                    <div className="text-lg xs:text-xl sm:text-3xl font-bold text-primary mb-0.5 sm:mb-2">500+</div>
+                    <div className="text-[10px] xs:text-xs sm:text-base text-muted-foreground">Happy Families</div>
                   </CardContent>
                 </Card>
-                <Card className="card-spiritual text-center sm:col-span-2">
-                  <CardContent className="pt-6">
-                    <MapPin className="w-8 h-8 text-primary mx-auto mb-4" />
-                    <div className="text-xl font-bold text-primary mb-2">LB Nagar, Hyderabad</div>
-                    <div className="text-muted-foreground">Home Base</div>
+                <Card className="card-spiritual text-center p-0 col-span-2 flex flex-col justify-between">
+                  <CardContent className="p-3 sm:p-6">
+                    <MapPin className="w-5 h-5 sm:w-8 sm:h-8 text-primary mx-auto mb-1.5 sm:mb-4" />
+                    <div className="text-sm xs:text-base sm:text-xl font-bold text-primary mb-0.5 sm:mb-2">LB Nagar, Hyderabad</div>
+                    <div className="text-[10px] xs:text-xs sm:text-base text-muted-foreground">Home Base</div>
                   </CardContent>
                 </Card>
               </div>
@@ -145,15 +145,15 @@ const About = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-8">
               {values.map((value, index) => (
-                <Card key={index} className="card-spiritual text-center hover-lift animate-fade-in">
-                  <CardHeader>
-                    <value.icon className="w-12 h-12 text-primary mx-auto mb-4" />
-                    <CardTitle className="text-divine">{value.title}</CardTitle>
+                <Card key={index} className="card-spiritual text-center hover-lift animate-fade-in flex flex-col justify-between p-0">
+                  <CardHeader className="p-2.5 sm:p-6 pb-1 sm:pb-2">
+                    <value.icon className="w-6 h-6 sm:w-12 sm:h-12 text-primary mx-auto mb-2 sm:mb-4" />
+                    <CardTitle className="text-xs xs:text-sm sm:text-xl font-bold text-divine line-clamp-1">{value.title}</CardTitle>
                   </CardHeader>
-                  <CardContent>
-                    <CardDescription>{value.description}</CardDescription>
+                  <CardContent className="p-2.5 sm:p-6 pt-0 sm:pt-0">
+                    <CardDescription className="text-[10px] xs:text-xs sm:text-sm text-muted-foreground line-clamp-2 sm:line-clamp-none min-h-[2.5rem] sm:min-h-0">{value.description}</CardDescription>
                   </CardContent>
                 </Card>
               ))}
@@ -171,15 +171,15 @@ const About = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3 sm:gap-8">
               {milestones.map((milestone, index) => (
-                <Card key={index} className="card-spiritual hover-lift animate-fade-in">
-                  <CardHeader>
-                    <div className="text-3xl font-bold text-primary mb-2">{milestone.year}</div>
-                    <CardTitle className="text-divine">{milestone.title}</CardTitle>
+                <Card key={index} className="card-spiritual hover-lift animate-fade-in flex flex-col justify-between p-0">
+                  <CardHeader className="p-2.5 sm:p-6 pb-1 sm:pb-2">
+                    <div className="text-lg xs:text-xl sm:text-3xl font-bold text-primary mb-1 sm:mb-2">{milestone.year}</div>
+                    <CardTitle className="text-xs xs:text-sm sm:text-xl font-bold text-divine line-clamp-1">{milestone.title}</CardTitle>
                   </CardHeader>
-                  <CardContent>
-                    <CardDescription>{milestone.description}</CardDescription>
+                  <CardContent className="p-2.5 sm:p-6 pt-0 sm:pt-0">
+                    <CardDescription className="text-[10px] xs:text-xs sm:text-sm text-muted-foreground line-clamp-2 sm:line-clamp-none min-h-[2.5rem] sm:min-h-0">{milestone.description}</CardDescription>
                   </CardContent>
                 </Card>
               ))}

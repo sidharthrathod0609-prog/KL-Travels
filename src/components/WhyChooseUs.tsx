@@ -48,25 +48,27 @@ const WhyChooseUs = () => {
         </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-8">
           {features.map((feature, index) => {
             const Icon = feature.icon;
             return (
               <div
                 key={feature.title}
-                className="card-spiritual text-center group"
+                className="card-spiritual text-center group flex flex-col justify-between"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                {/* Icon */}
-                <div className="relative mx-auto mb-6 w-16 h-16 rounded-full divine-gradient flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <Icon className="w-8 h-8 text-background" />
-                </div>
+                <div>
+                  {/* Icon */}
+                  <div className="relative mx-auto mb-3 sm:mb-6 w-10 h-10 sm:w-16 sm:h-16 rounded-full divine-gradient flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <Icon className="w-5 h-5 sm:w-8 sm:h-8 text-background" />
+                  </div>
 
-                {/* Content */}
-                <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
-                  {feature.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
+                  {/* Content */}
+                  <h3 className="text-xs xs:text-sm sm:text-xl font-bold text-foreground mb-1.5 sm:mb-3 group-hover:text-primary transition-colors line-clamp-2 min-h-[2rem] sm:min-h-0">
+                    {feature.title}
+                  </h3>
+                </div>
+                <p className="text-[10px] xs:text-xs sm:text-base text-muted-foreground leading-normal line-clamp-2 mt-1 sm:mt-0">
                   {feature.description}
                 </p>
               </div>

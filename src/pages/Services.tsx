@@ -104,20 +104,20 @@ const Services = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-8">
               {services.map((service, index) => (
-                <Card key={index} className="card-spiritual hover-lift animate-fade-in">
-                  <CardHeader>
-                    <service.icon className="w-12 h-12 text-primary mb-4" />
-                    <CardTitle className="text-divine">{service.title}</CardTitle>
-                    <CardDescription>{service.description}</CardDescription>
+                <Card key={index} className="card-spiritual hover-lift animate-fade-in flex flex-col justify-between p-0">
+                  <CardHeader className="p-2 sm:p-6 pb-1 sm:pb-6">
+                    <service.icon className="w-6 h-6 sm:w-12 sm:h-12 text-primary mb-2 sm:mb-4" />
+                    <CardTitle className="text-xs xs:text-sm sm:text-xl font-bold text-divine line-clamp-1">{service.title}</CardTitle>
+                    <CardDescription className="text-[10px] xs:text-xs sm:text-sm text-muted-foreground line-clamp-2 min-h-[2.5rem] sm:min-h-0">{service.description}</CardDescription>
                   </CardHeader>
-                  <CardContent>
-                    <ul className="space-y-2">
+                  <CardContent className="p-2 sm:p-6 pt-0 sm:pt-0">
+                    <ul className="space-y-1 sm:space-y-2">
                       {service.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-start space-x-2">
-                          <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                          <span className="text-sm text-muted-foreground">{feature}</span>
+                        <li key={featureIndex} className="flex items-start space-x-1.5 sm:space-x-2">
+                          <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span className="text-[9px] xs:text-[10px] sm:text-sm text-muted-foreground leading-normal line-clamp-1 sm:line-clamp-none">{feature}</span>
                         </li>
                       ))}
                     </ul>

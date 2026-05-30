@@ -237,7 +237,7 @@
 
   /* Custom component refinements */
   .card-spiritual {
-    padding: 1rem !important; /* tighter card padding */
+    padding: 0.75rem !important; /* even tighter card padding for side-by-side */
   }
 
   /* Calendar Popover responsiveness */

@@ -212,31 +212,31 @@ const Reviews = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-8">
               {sortedReviews.map((review) => (
-                <Card key={review.id} className="card-spiritual hover-lift animate-fade-in">
-                  <CardHeader>
-                    <div className="flex items-center justify-between mb-2">
-                      <div className="flex items-center space-x-1">
+                <Card key={review.id} className="card-spiritual hover-lift animate-fade-in flex flex-col justify-between p-0">
+                  <CardHeader className="p-2 sm:p-6 pb-1 sm:pb-6">
+                    <div className="flex items-center justify-between mb-1 sm:mb-2 gap-1">
+                      <div className="flex items-center space-x-0.5 sm:space-x-1 flex-shrink-0">
                         {renderStars(review.rating)}
                       </div>
-                      <div className="flex items-center text-sm text-muted-foreground">
-                        <Calendar className="w-4 h-4 mr-1" />
+                      <div className="flex items-center text-[8px] xs:text-[10px] sm:text-sm text-muted-foreground flex-shrink-0">
+                        <Calendar className="w-2.5 h-2.5 sm:w-4 sm:h-4 mr-0.5 sm:mr-1" />
                         {review.date}
                       </div>
                     </div>
-                    <CardTitle className="text-divine">{review.name}</CardTitle>
-                    <CardDescription className="flex items-center space-x-4">
+                    <CardTitle className="text-xs xs:text-sm sm:text-xl font-bold text-divine line-clamp-1">{review.name}</CardTitle>
+                    <CardDescription className="flex flex-col text-[8px] xs:text-[10px] sm:text-sm text-muted-foreground space-y-0.5 sm:space-y-0 sm:flex-row sm:items-center sm:space-x-4">
                       <div className="flex items-center">
-                        <MapPin className="w-4 h-4 mr-1" />
+                        <MapPin className="w-2.5 h-2.5 sm:w-4 sm:h-4 mr-0.5 sm:mr-1" />
                         {review.location}
                       </div>
-                      <span>•</span>
-                      <span>{review.destination}</span>
+                      <span className="hidden sm:inline">•</span>
+                      <span className="truncate">{review.destination}</span>
                     </CardDescription>
                   </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground leading-relaxed">"{review.comment}"</p>
+                  <CardContent className="p-2 sm:p-6 pt-0 sm:pt-0">
+                    <p className="text-muted-foreground leading-normal text-[9px] xs:text-[10px] sm:text-base line-clamp-4 min-h-[3.25rem] sm:min-h-0">"{review.comment}"</p>
                   </CardContent>
                 </Card>
               ))}

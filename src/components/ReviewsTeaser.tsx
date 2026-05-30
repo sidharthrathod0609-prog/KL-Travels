@@ -73,7 +73,7 @@ const ReviewsTeaser = () => {
     return Array.from({ length: 5 }, (_, index) => (
       <Star
         key={index}
-        className={`w-4 h-4 ${index < rating ? "fill-yellow-400 text-yellow-400" : "text-gray-300"
+        className={`w-2.5 h-2.5 sm:w-4 sm:h-4 ${index < rating ? "fill-yellow-400 text-yellow-400" : "text-gray-300"
           }`}
       />
     ));
@@ -105,43 +105,45 @@ const ReviewsTeaser = () => {
         </div>
 
         {/* Reviews Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <div className="grid grid-cols-2 gap-3 sm:gap-8 mb-12">
           {sortedReviews.map((review, index) => (
             <Card
               key={review.id}
-              className="card-spiritual group hover-lift"
+              className="card-spiritual group hover-lift flex flex-col justify-between p-0"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <CardContent className="p-6">
-                <div className="flex items-start justify-between mb-4">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
-                      <span className="text-primary font-semibold text-lg">
-                        {review.name.charAt(0)}
-                      </span>
+              <CardContent className="p-3 sm:p-6 flex flex-col justify-between h-full space-y-3 sm:space-y-4">
+                <div>
+                  <div className="flex items-start justify-between gap-1 mb-2 sm:mb-4">
+                    <div className="flex items-center space-x-1.5 sm:space-x-3 min-w-0">
+                      <div className="w-7 h-7 sm:w-12 sm:h-12 bg-primary/20 rounded-full flex items-center justify-center flex-shrink-0">
+                        <span className="text-primary font-semibold text-xs sm:text-lg">
+                          {review.name.charAt(0)}
+                        </span>
+                      </div>
+                      <div className="min-w-0">
+                        <h4 className="font-semibold text-foreground text-[10px] xs:text-xs sm:text-base line-clamp-1">{review.name}</h4>
+                        <p className="text-[8px] xs:text-[10px] sm:text-sm text-muted-foreground truncate">{review.location}</p>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="font-semibold text-foreground">{review.name}</h4>
-                      <p className="text-sm text-muted-foreground">{review.location}</p>
-                    </div>
+                    <div className="flex flex-shrink-0 pt-0.5">{renderStars(review.rating)}</div>
                   </div>
-                  <div className="flex">{renderStars(review.rating)}</div>
+
+                  <div className="mb-2 sm:mb-4">
+                    <Badge variant="secondary" className="text-[8px] sm:text-xs px-1 sm:px-2.5 py-0.5 max-w-full truncate">
+                      {review.trip}
+                    </Badge>
+                  </div>
+
+                  <div className="relative mb-2 sm:mb-4">
+                    <Quote className="absolute top-0 left-0 w-2.5 h-2.5 sm:w-4 sm:h-4 text-primary/40 -translate-x-0.5 -translate-y-0.5" />
+                    <p className="text-foreground italic pl-3 leading-normal text-[9px] xs:text-[10px] sm:text-base line-clamp-4 min-h-[3.25rem] sm:min-h-0">
+                      "{review.comment}"
+                    </p>
+                  </div>
                 </div>
 
-                <div className="mb-4">
-                  <Badge variant="secondary" className="text-xs">
-                    {review.trip}
-                  </Badge>
-                </div>
-
-                <div className="relative mb-4">
-                  <Quote className="absolute top-0 left-0 w-4 h-4 text-primary/40 -translate-x-1 -translate-y-1" />
-                  <p className="text-foreground italic pl-4 leading-relaxed">
-                    "{review.comment}"
-                  </p>
-                </div>
-
-                <div className="text-xs text-muted-foreground">
+                <div className="text-[8px] xs:text-[9px] sm:text-xs text-muted-foreground mt-auto border-t border-border/30 pt-2">
                   {review.date}
                 </div>
               </CardContent>

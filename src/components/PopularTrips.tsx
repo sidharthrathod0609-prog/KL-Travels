@@ -66,41 +66,46 @@ const PopularTrips = () => {
         </div>
 
         {/* Trips Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-8">
           {trips.map((trip, index) => (
             <div
               key={trip.id}
-              className="card-spiritual group cursor-pointer"
+              className="card-spiritual group cursor-pointer flex flex-col justify-between"
               style={{ animationDelay: `${index * 0.1}s` }}
               onClick={() => navigate(`/destinations/${trip.id}`)}
             >
-              {/* Image */}
-              <div className="relative overflow-hidden rounded-lg mb-6">
-                <img
-                  src={trip.image}
-                  alt={trip.title}
-                  className="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                <div className="absolute top-4 left-4 text-3xl bg-background/90 rounded-full w-12 h-12 flex items-center justify-center">
-                  {trip.icon}
+              <div>
+                {/* Image */}
+                <div className="relative overflow-hidden rounded-lg mb-3 sm:mb-6">
+                  <img
+                    src={trip.image}
+                    alt={trip.title}
+                    className="w-full h-24 xs:h-28 sm:h-48 object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                  <div className="absolute top-2 left-2 text-lg sm:text-3xl bg-background/90 rounded-full w-8 h-8 sm:w-12 sm:h-12 flex items-center justify-center">
+                    {trip.icon}
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="space-y-1.5 sm:space-y-4">
+                  <h3 className="text-xs xs:text-sm sm:text-xl font-bold text-foreground group-hover:text-primary transition-colors line-clamp-1">
+                    {trip.title}
+                  </h3>
+                  <p className="text-[10px] xs:text-xs sm:text-base text-muted-foreground line-clamp-2">
+                    {trip.description}
+                  </p>
                 </div>
               </div>
 
-              {/* Content */}
-              <div className="space-y-4">
-                <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
-                  {trip.title}
-                </h3>
-                <p className="text-muted-foreground">
-                  {trip.description}
-                </p>
+              <div className="mt-3 sm:mt-4">
                 <Button
                   variant="ghost"
-                  className="w-full justify-between group-hover:bg-primary/10 group-hover:text-primary transition-all duration-300"
+                  className="w-full justify-between group-hover:bg-primary/10 group-hover:text-primary transition-all duration-300 h-8 sm:h-10 text-[10px] sm:text-sm px-2 sm:px-4"
                 >
-                  View Details
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  <span className="truncate">View Details</span>
+                  <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0 transition-transform group-hover:translate-x-1" />
                 </Button>
               </div>
             </div>

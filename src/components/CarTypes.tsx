@@ -72,35 +72,35 @@ const CarTypes = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-8">
           {carTypes.map((car, index) => {
             return (
-              <Card key={index} className="card-spiritual hover-lift group">
-                <CardHeader>
-                  <div className="relative h-48 mb-4 rounded-lg overflow-hidden">
+              <Card key={index} className="card-spiritual hover-lift group flex flex-col justify-between p-0">
+                <CardHeader className="p-2 sm:p-6 pb-1 sm:pb-6">
+                  <div className="relative h-24 xs:h-28 sm:h-48 mb-2 sm:mb-4 rounded-lg overflow-hidden">
                     <img 
                       src={car.image} 
                       alt={car.name}
                       className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                     />
-                    <Badge className="badge-divine absolute top-2 right-2">{car.bestFor}</Badge>
+                    <Badge className="badge-divine absolute top-1.5 right-1.5 text-[8px] sm:text-xs px-1 sm:px-2.5 py-0.5 truncate max-w-[80%]">{car.bestFor}</Badge>
                   </div>
-                  <CardTitle className="text-divine">{car.name}</CardTitle>
-                  <CardDescription>{car.description}</CardDescription>
+                  <CardTitle className="text-sm xs:text-base sm:text-2xl font-bold text-divine line-clamp-1">{car.name}</CardTitle>
+                  <CardDescription className="text-[10px] xs:text-xs sm:text-sm text-muted-foreground line-clamp-2 min-h-[2.5rem] sm:min-h-0">{car.description}</CardDescription>
                 </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="text-center p-3 bg-secondary/20 rounded-lg">
-                      <Users className="w-5 h-5 mx-auto mb-1 text-primary" />
-                      <div className="text-sm font-medium">{car.capacity}</div>
+                <CardContent className="p-2 sm:p-6 pt-0 sm:pt-0 space-y-2 sm:space-y-4">
+                  <div className="grid grid-cols-2 gap-1.5 sm:gap-4">
+                    <div className="text-center p-1.5 sm:p-3 bg-secondary/20 rounded-lg">
+                      <Users className="w-3.5 h-3.5 sm:w-5 sm:h-5 mx-auto mb-0.5 sm:mb-1 text-primary" />
+                      <div className="text-[9px] xs:text-xs sm:text-sm font-medium">{car.capacity}</div>
                     </div>
-                    <div className="text-center p-3 bg-secondary/20 rounded-lg">
-                      <Package className="w-5 h-5 mx-auto mb-1 text-primary" />
-                      <div className="text-sm font-medium">{car.luggage}</div>
+                    <div className="text-center p-1.5 sm:p-3 bg-secondary/20 rounded-lg">
+                      <Package className="w-3.5 h-3.5 sm:w-5 sm:h-5 mx-auto mb-0.5 sm:mb-1 text-primary" />
+                      <div className="text-[9px] xs:text-xs sm:text-sm font-medium">{car.luggage}</div>
                     </div>
                   </div>
                   
-                  <div>
+                  <div className="hidden sm:block">
                     <h5 className="font-medium text-foreground mb-2">Features:</h5>
                     <ul className="text-sm text-muted-foreground space-y-1">
                       {car.features.map((feature, i) => (
@@ -112,14 +112,14 @@ const CarTypes = () => {
                     </ul>
                   </div>
                   
-                  <div>
+                  <div className="hidden sm:block">
                     <h5 className="font-medium text-foreground mb-1">Examples:</h5>
                     <p className="text-sm text-muted-foreground">{car.examples}</p>
                   </div>
-                  <div className="pt-4 border-t">
+                  <div className="pt-2 sm:pt-4 border-t border-border/50">
                     <Button 
                       onClick={() => window.open("tel:+919908590094", "_self")} 
-                      className="w-full btn-divine"
+                      className="w-full btn-divine h-8 sm:h-10 text-[10px] sm:text-sm px-2 sm:px-4"
                     >
                       Book Ride
                     </Button>
