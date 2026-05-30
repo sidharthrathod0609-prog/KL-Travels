@@ -25,7 +25,7 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-4 lg:px-8 text-center">
         <div className="max-w-4xl mx-auto animate-fade-in-up">
           {/* Main Headline */}
-          <h1 className="text-5xl lg:text-7xl font-bold mb-6 text-foreground">
+          <h1 className="hero-title text-5xl lg:text-7xl font-bold mb-6 text-foreground">
             🚗 <span className="text-divine">Safe. Spiritual. Trusted</span> Since 2015.
           </h1>
 

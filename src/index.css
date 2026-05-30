@@ -208,10 +208,46 @@
     padding-right: 1rem !important;
   }
 
-  /* Global section padding adjustments */
+  /* Global section padding adjustments to remove extra space up/down of titles */
   .py-20 {
-    padding-top: 3rem !important;
-    padding-bottom: 3rem !important;
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+
+  .pt-20 {
+    padding-top: 4rem !important; /* Reduces space above page title caused by pt-20 on main tag */
+  }
+
+  /* Global margins adjustments to remove extra spacing on mobile */
+  .mb-4 {
+    margin-bottom: 0.5rem !important;
+  }
+  .mb-6 {
+    margin-bottom: 0.5rem !important;
+  }
+  .mb-8 {
+    margin-bottom: 0.75rem !important;
+  }
+  .mb-12 {
+    margin-bottom: 1rem !important;
+  }
+  .mb-16 {
+    margin-bottom: 1.25rem !important;
+  }
+  .mb-20 {
+    margin-bottom: 1.5rem !important;
+  }
+  .mt-12 {
+    margin-top: 1rem !important;
+  }
+  .mt-16 {
+    margin-top: 1.25rem !important;
+  }
+
+  /* Specific home page hero title scaling */
+  .hero-title {
+    font-size: 1.6rem !important; /* Scale down title text for phone view */
+    line-height: 2.2rem !important;
   }
 
   /* Global typography adjustments */
